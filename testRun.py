@@ -1,8 +1,14 @@
+import os
+
 import hikari
 import lightbulb
+from dotenv import load_dotenv, dotenv_values
+
+load_dotenv()
+dis_token = str(os.getenv("TOKEN"))
 
 # Instantiate a Bot instance
-bot = lightbulb.BotApp(token="OTEwOTUzNTk4MDg1NjQ0Mjg4.GFSLuC.5Cf3o9qUl0yiods2alTpmtkg7KktbxZXPbumLc",
+bot = lightbulb.BotApp(token=dis_token,
                        default_enabled_guilds=(),
                        intents=hikari.Intents.ALL_UNPRIVILEGED | hikari.Intents.MESSAGE_CONTENT)
 
